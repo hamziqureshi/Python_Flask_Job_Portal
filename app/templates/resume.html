@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+    <div class="login-wrap p-4 p-md-5">
+    <h1>CV/Resume</h1>
+    <br>
+    <img src="{{url_for('static', filename=cv)}}" alt="User Image">
+    <br>
+    <br>
+    <a href="/meeting/{{id}}"  class="btn btn-primary mb-2" role="button" aria-disabled="true">Start Interview</a>
+    </div>
+    </div>
+    </div>
+</body>
+{% endblock %}

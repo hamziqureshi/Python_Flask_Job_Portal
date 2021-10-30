@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+  <br>
+<div class="content-section">
+  <form method="POST" action="">
+      {{ form.hidden_tag() }}
+    <div class="row mb-2">
+    <div class="col-md-8">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Input Details</strong>
+            <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            <br>
+                <div class="form-group">
+                    {{ form.industry.label(class="form-control-label") }}
+                    {% if form.industry.errors %}
+                        {{ form.industry(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.industry.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.industry(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            <br>
+            <div class="form-group">
+                    {{ form.description.label(class="form-control-label") }}
+                    {% if form.description.errors %}
+                        {{ form.description(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.description.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.description(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            <br>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="col text-center">
+         {{ form.submit(class="btn btn-primary mb-2") }}
+    </div>
+  </form>
+</div>
+{% endblock %}

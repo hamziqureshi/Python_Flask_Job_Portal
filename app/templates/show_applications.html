@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    {% for application in applications %}
+    <div class="col-lg-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Industry: {{application.industry}}</strong>
+          <h3 class="mb-0">Degree: {{application.degree[1:]}}</h3>
+          <h3 class="mb-0">Experience in years: {{application.experience}}</h3>
+          <div class="mb-1 text-muted">Date: {{application.date_posted}}</div>
+          <p class="card-text mb-auto">{{application.cover_letter}}</p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <a href="/resume/{{application.id}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">CV / Resume</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
