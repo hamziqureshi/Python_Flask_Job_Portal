@@ -18,7 +18,7 @@ or
 
 2- Activate it
 
-```source venv/Script/activate``` (Windows)
+```source venv/Scripts/activate``` (Windows)
 
 ```source venv/bin/activate``` (Linux)
 
